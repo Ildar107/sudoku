@@ -19,7 +19,7 @@ function getSolve(matrix, allVariations = null) {
       {
         let newMatrix = matrix.slice(0);
         newMatrix[cell.row][cell.column] = num;
-        newMatrix = getSolve(newMatrix, allVariations.slice(0));
+        newMatrix = getSolve(newMatrix)//, allVariations.slice(0));
         if(newMatrix !== null)
           return newMatrix;
       }
