@@ -13,13 +13,10 @@ function getSolve(matrix) {
 
   for(let num of cell.variations)
   {
-    if(checkAllRules(matrix, cell.row, cell.column, num))
-    {
-      matrix[cell.row][cell.column] = num;
-      if(getSolve(matrix) !== null)
-        return matrix;
-      matrix[cell.row][cell.column] = 0;
-    }
+    matrix[cell.row][cell.column] = num;
+    if(getSolve(matrix) !== null)
+      return matrix;
+    matrix[cell.row][cell.column] = 0;
   }
   return null;
 }
